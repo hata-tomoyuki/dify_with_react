@@ -20,7 +20,7 @@ export const sendChatMessage = async (message, conversationId, topic) => {
         conversation_id: conversationId,
         user: USER_ID,
         inputs: {
-            topics: [topic] // トピックを配列として追加
+            topics: topic // トピックを文字列として追加
         }
     };
 
