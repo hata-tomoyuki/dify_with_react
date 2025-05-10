@@ -1,0 +1,164 @@
+/* ===== カラー変数の定義 ===== */
+:root {
+    /* メインカラー */
+    --color-primary: #007bff;
+    --color-primary-dark: #0056b3;
+    --color-primary-darker: #004494;
+
+    /* 背景色 */
+    --color-background: white;
+    --color-background-light: #f0f0f0;
+
+    /* テキストカラー */
+    --color-text: black;
+    --color-text-light: white;
+
+    /* エラーカラー */
+    --color-error: #ff4444;
+
+    /* ボーダーカラー */
+    --color-border: #ddd;
+    --color-border-light: #eee;
+}
+
+/* ===== チャットコンテナの基本設定 ===== */
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: var(--color-background);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== チャットヘッダーのスタイル ===== */
+.chat-header {
+    padding: 10px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border-radius: 10px 10px 0 0;
+    font-weight: bold;
+}
+
+/* ===== トピック選択欄のスタイル ===== */
+.chat-topic {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--color-border-light);
+    background-color: var(--color-background-light);
+}
+
+.chat-topic select {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.chat-topic select:disabled {
+    background-color: var(--color-background-light);
+    cursor: not-allowed;
+}
+
+/* ===== メッセージ表示エリアのスタイル ===== */
+.chat-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ===== メッセージの基本スタイル ===== */
+.message {
+    max-width: 80%;
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin: 4px 0;
+    word-wrap: break-word;
+}
+
+/* ===== ユーザーのメッセージスタイル ===== */
+.user-message {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+/* ===== アシスタントのメッセージスタイル ===== */
+.assistant-message {
+    background-color: var(--color-background-light);
+    color: var(--color-text);
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+/* ===== エラーメッセージのスタイル ===== */
+.error-message {
+    background-color: var(--color-error);
+    color: var(--color-text-light);
+    align-self: center;
+    font-size: 0.9em;
+}
+
+/* ===== 入力エリアのスタイル ===== */
+.chat-input {
+    padding: 10px;
+    border-top: 1px solid var(--color-border-light);
+    display: flex;
+    gap: 8px;
+}
+
+/* ===== 入力欄のスタイル ===== */
+.chat-input input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    outline: none;
+}
+
+/* ===== 入力欄のフォーカス時のスタイル ===== */
+.chat-input input:focus {
+    border-color: var(--color-primary);
+}
+
+.chat-input input:disabled {
+    background-color: var(--color-background-light);
+    cursor: not-allowed;
+}
+
+/* ===== 送信ボタンのスタイル ===== */
+.chat-input button {
+    padding: 8px 16px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* ===== 送信ボタンのホバー時のスタイル ===== */
+.chat-input button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* ===== 送信ボタンのクリック時のスタイル ===== */
+.chat-input button:active {
+    background-color: var(--color-primary-darker);
+}
+
+.chat-input button:disabled {
+    background-color: var(--color-border);
+    cursor: not-allowed;
+}
